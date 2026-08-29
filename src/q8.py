@@ -20,19 +20,25 @@ Task
 
 (a) What does the buggy version actually return for [1, 2, 3, 4, 5, 6, 8], and why?
 
-    Answer:
+    Answer:instead counting even , its counting odd cases.
 
 (b) Fix the bug. Write the corrected function below.
     (A one-character change is enough, but you must understand why.)
 """
 
-def count_evens(numbers):
-    # your corrected code here
-    pass
+    def count_evens(numbers):
+        count = 0
+        for n in numbers:
+            if n % 2 == 0:      # changed 1->0
+                count = count + 1
+        return count
 
+    # Expected: 4  (the evens are 2, 4, 6, 8)
+    print(count_evens([1, 2, 3, 4, 5, 6, 8]))
+   
 
 """
 (c) In one sentence, explain in plain English what `n % 2 == 0` checks.
 
-    Answer:
+    Answer: checks for Even number (no reminder)
 """
